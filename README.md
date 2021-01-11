@@ -17,69 +17,25 @@ The interface main window shows the general options the user can select. With `I
 
 ---
 
-Pressing `Input Files` let the user decide whether the input is simply selected or it is generated. If input excel files are already in place, select the button `Excel files`. This opens a window for direct selection of the input folder. The other two options allow for the generation of the input. With the first button `Extract` the user can generate the input files from a shapefile containing transects and a number of rasters of bathymetry and topography. The button `Morphan` let the user generate input files directly from Morphan output files. The latter workflow is still *in progress*. 
+Pressing `Input Files` let the user decide whether the input is simply selected or it is generated. The choice is presented between three different ways of generating the excel input files for D-Flow Slide run. If input excel files are already in place, select the button `Excel files`. This opens a window for direct selection of the input folder. The other two options allow for the generation of the input. With the first button `Extract` the user can generate the input files from a shapefile containing transects and a number of rasters of bathymetry and topography. The button `Morphan` let the user generate input files directly from Morphan output files. The latter workflow is still *in progress*. 
 
 ![win_selectinput.jpeg](static/win_selectinput.jpeg)
 
 ---
 
-
+Pressing `Extract` opens a menu for the extraction of input files from bathymetry/topography and shapefile. The user select the location of .tif bathymetric files by clicking on `Input rasters`. The location of topographic files is given by clicking on `Input ahn`. A shapefile containing cross-shore transects is selected with `Input shapefile`. The shapefile can contain one or multiple shapefiles. The button `Output extraction` let the user select the location of the output of this raster extraction analysis. Once the above mentioned options are determined, the button `Run extraction` will execute the extraction code. This may take a minute, however the output from terminal shows the running tasks. The next operations aim at finding characteristic points and writing the excel file to use as input of D-Flow Slide. Once the profiles have been extracted from rasters, next time the user opens the interface, the user can directly start from these last remaining steps, so that the extraction does not have to take place every time the interface is opened. Click on `Select profiles` to select just a number of profiles from the ones extracted in the previous steps. Click `Find points` to find characteristic points from the selected profiles. The windows that pop-up will also ask for a kering shapefile to easily determine the side of the river/channel to calculate the characteristic points from. This may take a minute, so wait for the bar to finish and follow the operations from the terminal. The button `Write excel` writes excel in a folder the user chooses. `Save and Return` will return to the main interface window. 
 
 ![win_inputfromraster.jpeg](static/win_inputfromraster.jpeg)
+
+NB: All the windows that pop-up have a title explaining what the user should do. This helps a lot to direct actions.
 
 ---
 
 
 ## Getting started
+A tutorial is presented here.
 
-### Input files
-When clicking on **Input files** button, another window open where the choice is presented between three different ways of generating the excel input files for D-Flow Slide run. 
-
-
-### Folder DFlowSlides  
-
-
-### Folder results
-
-### Exit
-The **Exit** button closes the main window. 
-
-Downloading the Digital Elevation Model data for the area of interest:  
-* Define boundingbox of area of interest (File "clip_ahn.py", line 83)
-* Run clip_ahn.py in cmd
-* Enter local path to gdal_merge (File "clip_ahn.py", line 83)  
-
-Create input folders containing: 
-
-1.	Topographic data of the river (*.tif)
-2.	Longitudinal section of the dike (*.shp)
-3.	Cross sections of the dike (*.shp) 
-
-Provide the local paths in the .py scripts whenever a local path is required. 
-Read and merge the topographic data of the river with the Digital Elevation Model data for each cross section of the dike: 
-
-```
-raster_extract.py
-```
-### Define the characteristic points
-Definition of characteristic points *Dike Top*, *Bottom River Channel*, *Insert river channel*
-and *Dike Toe*.  
-```
-Run characteristic_points.py in cmd
-
-Are you satisfied with the characteristic points automatically chosen? If not, select them manually.
-```
-
-You can read how characteristic points are used in the detailed check in the [schematiseringshandleiding](https://publicwiki.deltares.nl/download/attachments/90409971/1220078-007-GEO-0007-v3-r-Schematiseringshandleiding%20zettingsvloeiing_v3revised_final.pdf?version=1&modificationDate=1445427580000&api=v2)
-
-### Create input files for Batch Tool 
-Creation of Excel files (*.xlsx) for the Batch Tool. 
-
-```
-write_excel.py 
-```
-
-Use the created excel files as inputs for the Batch Tool.
+...
 
 ---
 
@@ -88,11 +44,10 @@ Use the created excel files as inputs for the Batch Tool.
 Anaconda3 and python 3.7 is used through the development of the input generation for the batch tool
 The stand-alone configuration of the batch tool let the user avoid the set-up of an environment or an environment.yml file, 
 
-Use the terminal or an Anaconda Prompt for the following steps:
-
 ---
 
 ## Authors
 * **Giorgio Santinelli**
 * **Maria Luisa Taccari**
+* **Bruno Zuada Coelho**
 
