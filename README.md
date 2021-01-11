@@ -1,9 +1,8 @@
-# dflowslide_batchtool
-Provisional repository for manual and developments of DFlow-Slide batch tool
+Provisional repository for manual and developments of D+Flow Slide batch tool
 
 # D-Flow Slide Inputs creation
 
-Batch Tool Interface for D-Flow Slides. The interface also takes care of input preparation and generation D-Flow Slides
+Batch Tool Interface for D-Flow Slides. The interface also takes care of input preparation and generation for D-Flow Slide computation.
 
 *D-Flow Slide - background [here](https://publicwiki.deltares.nl/display/GEO/Background+-+Detailed+check)* 
 
@@ -12,15 +11,19 @@ Batch Tool Interface for D-Flow Slides. The interface also takes care of input p
 ---
 
 ## Interface
-
+The interface main window shows the general options the user can select. With `Input files` the user can select the input file to be ingested in D-Flow Slide. The button `Folder D-Flow Slide` let the user select the folder where the kernel of D-Flow Slide is in. The computation will make use of the libraries and executables contained in that folder. With `Folder Results`, the user selects the output folder for the run. Once the information from these three buttons is gathered, the `Run` button will activate and run D-Flow Slide. The user can either start another run with other input values or exit the interface by pressing `Exit`. Keep in mind that a log of the computation is shown in the terminal, so that the user always knows what is happening under the hood. 
 
 ![win_main](static/win_main.jpeg)
 
 ---
 
+Pressing `Input Files` let the user decide whether the input is simply selected or it is generated. If input excel files are already in place, select the button `Excel files`. This opens a window for direct selection of the input folder. The other two options allow for the generation of the input. With the first button `Extract` the user can generate the input files from a shapefile containing transects and a number of rasters of bathymetry and topography. The button `Morphan` let the user generate input files directly from Morphan output files. The latter workflow is still *in progress*. 
+
 ![win_selectinput.jpeg](static/win_selectinput.jpeg)
 
 ---
+
+
 
 ![win_inputfromraster.jpeg](static/win_inputfromraster.jpeg)
 
