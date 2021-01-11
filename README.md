@@ -1,6 +1,6 @@
 Provisional repository for manual and developments of D+Flow Slide batch tool
 
-# D-Flow Slide Inputs creation
+# D-Flow Slide Batch tool
 
 Batch Tool Interface for D-Flow Slides. The interface also takes care of input preparation and generation for D-Flow Slide computation.
 
