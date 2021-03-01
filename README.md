@@ -35,7 +35,20 @@ NB: All the windows that pop-up have a title explaining what the user should do.
 ## Getting started
 A tutorial is presented here.
 
-...
+### Run on existing input files
+
+### Extract profiles from raster
+
+### Find characteristic points and generate input file for DFlowSlide
+Once the rester extraction is done, the next commands can be executed.
+
+NB. If the extraction of raster has been already carried out, there is no need to follow the entire procedure from the beginning. In fact, once the rasters are interpolated along the cross transects, profiles are obtained and saved in the "raw" folder. At this point, the characteristic points and the DFlowSlide excel input files can be obtained, without processing any raster. 
+
+### Extract profiles from Morphan
+In progress.
+
+### Run DFlowSlide batch tool
+
 
 ---
 
