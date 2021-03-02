@@ -55,7 +55,9 @@ NB. If the extraction of raster has been already carried out, there is no need t
 In progress.
 
 ### Run DFlowSlide batch tool
-
+Once the excels files are written, click on `Save and Return` to come back to the main screen. Input files are already stored in memory, so there is no need to click on `Input files` again, unless the user would like to process other input files. The button `Folder D-Flow Slide` let the user select the folder where the kernel of D-Flow Slide is in. The computation will make use of the libraries and executables contained in that folder. With `Folder Results`, the user selects the output folder for the run. The user can now finally run DFlow Slide computation by clicking on `Run` button. The following progress bar will appear.
+ 
+![win_inputfromraster.jpeg](static/calculating.jpeg)
 
 ---
 
