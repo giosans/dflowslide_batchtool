@@ -33,23 +33,27 @@ NB: All the windows that pop-up have a title explaining what the user should do.
 
 
 ## Getting started
-A tutorial is presented here.
+Open a terminal and run DFlowSlide_Batch.exe. After clicking on the executable, wait a few minutes for the application to start.
 
 ### Requirements
 Running the D-Flow Slide Batch tool needs:
-* raster ('tif') bathymetric file or files
-* raster ('tif') topographic file or files
-* cross river transects ('shp') along which we interpolate the rasters and obtain the profiles
-* barrier ('shp') as keringlijn to help determine the transect/profile direction
+* raster ('tif') bathymetric file or files;
+* raster ('tif') topographic file or files;
+* cross river transects ('shp') along which we interpolate the rasters and obtain the profiles;
+* barrier line ('shp') as keringlijn to help determining what side is the profile to be tested and hence the transect/profile direction.
 
 ### Run on existing input files
+In case the user has already available input excel files, they can be selected click on and `Excel files`. After folder selection, the user can continue from the main screen and follow the instructions in paragraph 'Run DFlowSlide batch tool'. 
 
 ### Extract profiles from raster
+Press on `Extract` to extract profiles from rasters, and find characteristic points and write excel input files for DFlow-Slide. Once the user clicks on `Extract`, a menu window opens for the extraction of input files from bathymetry/topography and shapefile. The user select the location of .tif bathymetric files by clicking on `Input rasters`. The location of topographic files is given by clicking on `Input ahn`. A shapefile containing cross-shore transects is selected with `Input shapefile`. The shapefile can contain one or multiple shapefiles. The button `Output extraction` let the user select the location of the output of this raster extraction analysis. Once the above mentioned options are determined, the button `Run extraction` will execute the extraction code. This may take a minute, however the output from terminal shows the running tasks. 
+
+NB. If the extraction of raster has been already carried out, there is no need to follow the entire procedure from the beginning. In fact, once the rasters are interpolated along the cross transects, profiles are obtained and saved in the "raw" folder. At this point, the characteristic points and the DFlowSlide excel input files can be obtained, without processing any raster. So the user will just have to `Select shapefile`, then click on `Select profiles` and follow remaining steps. 
 
 ### Find characteristic points and generate input file for DFlowSlide
-Once the rester extraction is done, the next commands can be executed.
+Once the raster extraction is done, the next commands can be executed. The next operations aim at finding characteristic points and writing the excel file to use as input of D-Flow Slide. Once the profiles are extracted from rasters, the profiles are saved on 'raw' folder, therefore next time the user opens the interface, the user can directly select a shapefile with `Select shapefile` and start from these last remaining steps, so that the extraction does not have to take place every time the interface is opened. 
 
-NB. If the extraction of raster has been already carried out, there is no need to follow the entire procedure from the beginning. In fact, once the rasters are interpolated along the cross transects, profiles are obtained and saved in the "raw" folder. At this point, the characteristic points and the DFlowSlide excel input files can be obtained, without processing any raster. 
+To find characteristic points, click on `Select profiles` to select just a number of profiles from the ones extracted in the previous steps. The user has to point to the 'raw' folder created in the previous steps. Click `Find points` to find characteristic points from the selected profiles. The windows that pop-up will also ask for a kering shapefile to easily determine the side of the river/channel to calculate the characteristic points from. This may take a minute, so wait and follow the operations from the terminal. The button `Write excel` writes excel in a folder the user chooses. Once clicked, inside the 'processed' folder, select the proper folder with the foldername as the shapefile name. After that, select the input for DFlow Slide, i.e. the place where you want to save your input file for the next phase, and wait until the Excel files are written. `Save and Return` will return to the main interface window. 
 
 ### Extract profiles from Morphan
 In progress.
