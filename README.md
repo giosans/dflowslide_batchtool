@@ -35,6 +35,13 @@ NB: All the windows that pop-up have a title explaining what the user should do.
 ## Getting started
 A tutorial is presented here.
 
+### Requirements
+Running the D-Flow Slide Batch tool needs:
+* raster ('tif') bathymetric file or files
+* raster ('tif') topographic file or files
+* cross river transects ('shp') along which we interpolate the rasters and obtain the profiles
+* barrier ('shp') as keringlijn to help determine the transect/profile direction
+
 ### Run on existing input files
 
 ### Extract profiles from raster
