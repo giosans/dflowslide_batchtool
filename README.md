@@ -1,6 +1,5 @@
-Provisional repository for manual and developments of DFlowSlide_batchtool
 
-# DFlowSlide Batch Tool
+# DFlowSlide Batch Tool manual
 The Batch Tool DFlowSlides has undergone many changes in the last 3 years. In 2022, the code has been refactored and cleaned to enable easier development, improve modularity, deployment, and user-readability. The Batch Tool consists of an interface that takes care of the input reading and pre-processing, and the running for DFlowSlide computations.
 
 A little background on D-FlowSlide is available from the wiki-page:
