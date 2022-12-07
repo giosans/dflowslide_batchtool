@@ -1,12 +1,13 @@
-Provisional repository for manual and developments of D+Flow Slide batch tool
+Provisional repository for manual and developments of DFlowSlide_batchtool
 
-# D-Flow Slide Batch tool
+# DFlowSlide Batch Tool
+The Batch Tool DFlowSlides has undergone many changes in the last 3 years. In 2022, the code has been refactored and cleaned to enable easier development, improve modularity, deployment, and user-readability. The Batch Tool consists of an interface that takes care of the input reading and pre-processing, and the running for DFlowSlide computations.
 
-Batch Tool Interface for D-Flow Slides. The interface also takes care of input preparation and generation for D-Flow Slide computation.
-
+A little background on D-FlowSlide is available from the wiki-page:
 *D-Flow Slide - background [here](https://publicwiki.deltares.nl/display/GEO/Background+-+Detailed+check)* 
 
-*Batch tool repository [here](https://repos.deltares.nl/repos/DFS)* 
+The repository is on Github. It may still be a private repository
+*Batch tool repository [here](https://github.com/Deltares/DFlowSlide_batchtool)* 
 
 ---
 
@@ -30,7 +31,6 @@ Pressing `Extract` opens a menu for the extraction of input files from bathymetr
 NB: All the windows that pop-up have a title explaining what the user should do. This helps a lot to direct actions throughout the process.
 
 ---
-
 
 ## Getting started
 Open a terminal and run DFlowSlide_Batch.exe. After clicking on the executable, wait a few minutes for the application to start. Once started, press `Input Files`.
@@ -60,21 +60,25 @@ Once the excels files are written, click on `Save and Return` to come back to th
  
 ![win_inputfromraster.jpeg](static/calculating.jpeg)
 
-
-### Extract profiles from Morphan
-In progress.
+### Further developments
+Pending development actions to the tool are not available at the moment and comprise:
+- Insert multiple soil layers
+- Better definition of top revetment and bottom revetment
+- Choosing auto / manual selection of characteristic points after each profile
+- Extracting profiles from Morphan
+- Rebuild as a browser application
 
 ---
 
-## Prerequisites
-
-Anaconda3 and python 3.7 is used through the development of the input generation for the batch tool. Code is also available [here](https://repos.deltares.nl/repos/DFS/).
-The stand-alone configuration of the batch tool let the user avoid the set-up of an environment or an environment.yml file, 
+## Requirements
+Requirements and environment file for local installation and testing are [here](https://github.com/Deltares/DFlowSlide_batchtool).
+The stand-alone configuration (.exe) of the batch tool has the advantage of being built with modern development CI/CD workflows, with unit and acceptance testing, and ultimately to keep the user free from local building from code. 
 
 ---
 
 ## Authors
 * **Giorgio Santinelli**
+* **Carles Soriano Perez**
 * **Maria Luisa Taccari**
 * **Bruno Zuada Coelho**
 
