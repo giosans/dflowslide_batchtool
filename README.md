@@ -36,9 +36,22 @@ Once the `Select Source` option is on `Excel files` the user can proceed with fi
 ![win_main](static/excel_results_action.png)
 
 ### Extract files, find points and run D-Flow Slide
-Once the `Select Source` option is on `Extract files` the user is ready to fill in all fields for extraction of profiles from rasters, finding characteristic points and writing excel input files for DFlow-Slide. The `Extract data` tab shows the fields. Once they are all there, the `Run extraction` button is activated, and can be started to start the extraction. Once the data is all extracted, the `Select transects` tab let the user select the proper transects from the extraction folder, which is inside the `raw` folder. At this point the `Characteristic Points` tab can be opened. There the `kering shapefile` field should be inserted. If done properly, the  `Find Points` button should be activated. If the `calculation mode` is selected as `Auto`, then finding the points will happen in an automated way. If the mode is `Manual` the plots per profile will be open and the user will go through each of those plots  and follow the instructions given in the image. When you read "Characteristic points computed" in the logging, you can go to the next step. The button `Export to .xlsx` writes the input excels for D-Flow Slide. After that, the `Run calculation` button will activate and by clicking it D-Flow Slide will run. 
- 
-![win_inputfromraster.jpeg](static/calculating.jpeg)
+Once the `Select Source` option is on `Extract files` the user is ready to fill in all fields for extraction of profiles from rasters, finding characteristic points and writing excel input files for DFlow-Slide. This is how the extraction window looks like.
+
+![win_main](static/extract_general.png)
+
+
+The `Extract data` tab shows the fields. Once they are all there, the `Run extraction` button is activated, and can be started to start the extraction. Once the data is all extracted, the `Select transects` tab let the user select the proper transects from the extraction folder, which is inside the `raw` folder. At this point the `Characteristic Points` tab can be opened. There the `kering shapefile` field should be inserted. If done properly, the  `Find Points` button should be activated. 
+If the `calculation mode` is selected as `Auto`, then finding the points will happen in an automated way. If the mode is `Manual` the plots per profile will be open and the user will go through each of those plots and follow the instructions given in the image. Here is an example of plot with instractions in the title.
+
+![win_main](static/choose_method.png)
+
+![win_main](static/findpoints_auto.png)
+
+![win_main](static/findpoints_manual.png)
+
+
+Either way, wWhen you read "Characteristic points computed" in the logging, you can go to the next step. The button `Export to .xlsx` writes the input excels for D-Flow Slide. After that, the `Run calculation` button will activate and by clicking it D-Flow Slide will run. 
 
 --- 
 
