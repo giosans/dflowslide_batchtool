@@ -5,34 +5,15 @@ The Batch Tool DFlowSlides has undergone many changes in the last 3 years. In 20
 A little background on D-FlowSlide is available from the wiki-page:
 *D-Flow Slide - background [here](https://publicwiki.deltares.nl/display/GEO/Background+-+Detailed+check)* 
 
-The repository is on Github. It may still be a private repository
+The repository is on Github. It may still be a private repository. If not, content would be available.
 *Batch tool repository [here](https://github.com/Deltares/DFlowSlide_batchtool)* 
 
 ---
 
-## Interface
-The interface main window shows the general options the user can select. With `Input files` the user can select the input file to be ingested in D-Flow Slide. The button `Folder D-Flow Slide` let the user select the folder where the kernel of D-Flow Slide is in. The computation will make use of the libraries and executables contained in that folder. With `Folder Results`, the user selects the output folder for the run. Once the information from these three buttons is gathered, the `Run` button will activate and run D-Flow Slide. The user can either start another run with other input values or exit the interface by pressing `Exit`. Keep in mind that a log of the computation is shown in the terminal, so that the user always knows what is happening under the hood. 
-
-![win_main](static/win_main.jpeg)
-
----
-
-Pressing `Input Files` let the user decide whether the input is simply selected or it is generated. The choice is presented between three different ways of generating the excel input files for D-Flow Slide run. If input excel files are already in place, select the button `Excel files`. This opens a window for direct selection of the input folder. The other two options allow for the generation of the input. With the first button `Extract` the user can generate the input files from a shapefile containing transects and a number of rasters of bathymetry and topography. The button `Morphan` let the user generate input files directly from Morphan output files. The latter workflow is still *in progress*. 
-
-![win_selectinput.jpeg](static/win_selectinput.jpeg)
-
----
-
-Pressing `Extract` opens a menu for the extraction of input files from bathymetry/topography and shapefile. The user select the location of .tif bathymetric files by clicking on `Input rasters`. The location of topographic files is given by clicking on `Input ahn`. A shapefile containing cross-shore transects is selected with `Input shapefile`. The shapefile can contain one or multiple shapefiles. The button `Output extraction` let the user select the location of the output of this raster extraction analysis. Once the above mentioned options are determined, the button `Run extraction` will execute the extraction code. This may take a minute, however the output from terminal shows the running tasks. The next operations aim at finding characteristic points and writing the excel file to use as input of D-Flow Slide. Once the profiles have been extracted from rasters, next time the user opens the interface, the user can directly start from these last remaining steps, so that the extraction does not have to take place every time the interface is opened. Click on `Select profiles` to select just a number of profiles from the ones extracted in the previous steps. Click `Find points` to find characteristic points from the selected profiles. The windows that pop-up will also ask for a kering shapefile to easily determine the side of the river/channel to calculate the characteristic points from. This may take a minute, so wait for the bar to finish and follow the operations from the terminal. The button `Write excel` writes excel in a folder the user chooses. `Save and Return` will return to the main interface window. 
-
-![win_inputfromraster.jpeg](static/win_inputfromraster.jpeg)
-
-NB: All the windows that pop-up have a title explaining what the user should do. This helps a lot to direct actions throughout the process.
-
----
-
 ## Getting started
-Open a terminal and run DFlowSlide_Batch.exe. After clicking on the executable, wait a few minutes for the application to start. Once started, press `Input Files`.
+The tool can work on Windows platforms, and it is an executable called `D-FlowSlide_Batchtool.exe`. After clicking on the executable, wait a half a minute for the application to start. Once started, the application will look like the following.
+
+![win_main](static/landing_page.png)
 
 ### Requirements
 Running the D-Flow Slide Batch tool needs:
@@ -40,6 +21,23 @@ Running the D-Flow Slide Batch tool needs:
 * raster ('tif') topographic file or files;
 * cross river transects ('shp') along which we interpolate the rasters and obtain the profiles;
 * barrier line ('shp') shapefile of a line which represents the keringlijn, to help determining what side is the profile to be tested and hence the transect/profile direction.
+
+### Technical Requirements
+Requirements and environment file for local installation and testing are maintained on a private repository [here](https://github.com/Deltares/DFlowSlide_batchtool).
+The stand-alone configuration (.exe) of the batch tool has the advantage of being built with modern development CI/CD workflows, with unit and acceptance testing, and ultimately to keep the user free from local building from code. 
+
+
+---
+
+## Process directly excel files
+
+The interface main window shows the general options the user can select. `Select Source` cascading menu let you choose between running D-Flow Slide calculation with the processed .xls input files of D-Flow Slide. By the `DFlowSlide Version` selection the user select the binary folder where the kernel of D-Flow Slide is in. The computation will make use of the libraries and executables contained in that folder. With `Results directory` selection, the user selects the output folder for the D-Flow Slide run. Once the information from these three buttons is gathered, the `Run` button will activate and run D-Flow Slide. The user can either start another run with other input values or exit the interface by pressing `Exit`. Keep in mind that a log of the computation is shown in the terminal, so that the user always knows what is happening under the hood. 
+
+![win_main](static/landing_page.png)
+
+---
+
+---
 
 ### Run on existing input files
 In case the user has already available input excel files, they can be selected click on and `Excel files`. After folder selection, the user can continue from the main screen and follow the instructions in paragraph 'Run DFlowSlide batch tool'. 
@@ -59,6 +57,35 @@ Once the excels files are written, click on `Save and Return` to come back to th
  
 ![win_inputfromraster.jpeg](static/calculating.jpeg)
 
+--- 
+
+## Other options of usage
+
+### Import and export .dbt files
+By clicking on `File` from cascading menu, three options open that interact with a settings .json file with `.dbt` extension. The three options let you: 
+* New: Swip out all changes, and start with a new clean interface;
+* Export: This will create a new `.dbt` file with as name the `Study name` given in the `General` tab. 
+* Import: If you already have a previously exported `.dbt` file, you can simply import it here. Doing so will automatically fill in the fields from the interface. 
+
+### Rerun the tool with different files
+If you would like to keep the same settings but just need changing files, it is advised to import a previously exported `.dbt` file and just import the path of those new files from the interface. This tip is valid for any setting you may want to change.
+
+### Re-run auto detection as manual
+If after the auto detection the user is not satisfied, importing the `.dbt` file will help to restore all settings and just find points in a manual way.
+
+
+---
+
+## Description of the tool tabs and buttons
+
+The tool consists of an `Action` panel with buttons, a tabs panel for selection of input, and a `Status Panel` with logging showing the status of the selection and calculation. 
+The `General` tab let the user decide whether the input is simply selected or it is generated. If Excel option is chosen, the tab `Excel input` guids the user in the selection of the input files, and the `Run calculation` button is activated. The `Extract files` option allow for the generation of the input for D-Flow Slide. By selecting it as source, new tabs and buttons are generated in the interface so the user can generate the input files for D-Flow Slide from a shapefile containing transects and a number of rasters of bathymetry and topography. 
+When running with `Extract files` mode, the `General` tab does not change. The tabs `Extract data`, `Select Transects`, `Characteristic Points` and the new buttons `Run extraction`, `Find Points`, `Export to .xlsx` appear. `Raster Folder` asks for a folder with raster files, namely bathymetric surveys. `AHN File` asks for a single topographic file for integration of the surveys. A shapefile containing cross-shore transects is selected with `Cross-section (*.shp)`. The shapefile can contain one or multiple shapefiles. The field `Extraction output folder` let the user select the location of the output of this raster extraction analysis. Now the button `Run extraction` is enabled. The following tab `Select transects` let you select the transect once the `Run extraction` analysis is complete. Alternatively, you can still select the folder where transects previously computed are stored. The tab `Characteristic Points` let the user select an along-section kering shapefile and select the calculation mode from the  `Calculation mode` menu. Once all fields  are complete, the two buttons `Find points` and `Export to .xlsx` perform finding characteristic points and writing the excel file to use as input of D-Flow Slide, respectively. `Run calculation` can be run to let D-Flow Slide compute on the input files and the settings given.
+
+NB: All the windows that pop-up have a title explaining what the user should do. This helps to direct actions throughout the process.
+
+---
+
 ### Further developments
 Pending development actions to the tool are not available at the moment and comprise:
 - Insert multiple soil layers
@@ -68,10 +95,6 @@ Pending development actions to the tool are not available at the moment and comp
 - Rebuild as a browser application
 
 ---
-
-## Requirements
-Requirements and environment file for local installation and testing are [here](https://github.com/Deltares/DFlowSlide_batchtool).
-The stand-alone configuration (.exe) of the batch tool has the advantage of being built with modern development CI/CD workflows, with unit and acceptance testing, and ultimately to keep the user free from local building from code. 
 
 ---
 
