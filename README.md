@@ -27,7 +27,7 @@ Requirements and environment file for local installation and testing are maintai
 The stand-alone configuration (.exe) of the batch tool has the advantage of being built with modern development CI/CD workflows, with unit and acceptance testing, and ultimately to keep the user free from local building from code. 
 
 ---
-## Intro
+## Tutorial
 The interface main window shows the general options the user can select. `Select Source` cascading menu let you choose between running D-Flow Slide calculation with the processed .xls input files of D-Flow Slide, or generate those input files through a process of extraction of transects and characteristic points detection. These two options are selected in the `Select Source` menu and point to `Excel files` and `Extract files` respectively. These options will be discussed in the following two sections.
 
 ### Run D-Flow Slide with input excel files
